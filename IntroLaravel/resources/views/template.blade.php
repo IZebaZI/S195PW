@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')</title>
+    <title>@yield('titulo')</title>
     @vite(['resources/js/app.js'])
 </head>
 <body>
@@ -18,6 +18,7 @@
         <div class="navbar-nav">
             <a class="nav-link" aria-current="page" href="{{route('form')}}">Registro de Clientes</a>
             <a class="nav-link" href="{{route('clients')}}">Consultar Clientes</a>
+            <a class="nav-link" href="{{route('components')}}">Componentes</a>
         </div>
         </div>
     </div>
