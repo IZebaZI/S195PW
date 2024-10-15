@@ -24,3 +24,5 @@ Route::get('/formulario', [viewController::class, 'form'])->name('form');
 Route::get('/consulta-clientes', [viewController::class, 'consulta'])->name('clients');
 
 Route::get('/componentes', [viewController::class, 'components'])->name('components');
+
+Route::post('/enviar', [viewController::class, 'processClient'])->name('processClient');
