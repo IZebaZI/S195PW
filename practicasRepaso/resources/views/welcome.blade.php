@@ -18,10 +18,13 @@
             <h5>Grupo: S195</h5>
         </div>
         <div class="row justify-content-center mt-3">
-            <div class="col-3">
+            <div class="col-2">
                 <img class="img-fluid" src="{{asset('img/upq-logo.png')}}" alt="logo">
             </div>
         </div>
+        <a class="btn btn-info mt-3" href="{{route('repaso')}}">
+            REPASO 1
+        </a>
     </div>
 </body>
 </html>
