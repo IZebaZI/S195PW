@@ -14,8 +14,8 @@
             <p class="card-text fw-lighter"></p>
         </div>
         <div class="card-footer text-body-secondary">
-            <button type="submit" class="btn btn-info">Actualizar</button>
-            <button type="submit" class="btn btn-warning">Eliminar</button>
+            <button type="submit" class="btn btn-info">{{__('Actualizar')}}</button>
+            <button type="submit" class="btn btn-warning">{{__('Eliminar')}}</button>
         </div>
     </div>
 </div>
