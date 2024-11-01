@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\validateBook;
 
 class booksController extends Controller
 {
@@ -16,9 +17,9 @@ class booksController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store(validateBook $request)
     {
-        $ISBN = $request->input('txtISBN');
+        $ISBN = $request->input('intISBN');
         $titulo = $request->input('txtTitulo');
         $autor = $request->input('txtAutor');
         $paginas = $request->input('intPaginas');
@@ -26,7 +27,7 @@ class booksController extends Controller
         $editorial = $request->input('txtEditorial');
         $correo = $request->input('txtCorreo');
         
-        session()->flash('success', 'Todo correcto: Libro "'.$titulo.'" guardado');
+        session()->flash('success', $titulo);
 
         return to_route('form');
     }

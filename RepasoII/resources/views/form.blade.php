@@ -6,41 +6,50 @@
 <div class="d-flex justify-content-center">
     <div class="card p-3 text-center">
         @session('success')
-            <script>alertify.alert('Registro Exitoso','{{$value}}');</script>
+            <script>alertify.alert("{{__('Registro Exitoso')}}","{{__('Todo correcto: Libro' )."'".$value."'".__(' guardado')}}");</script>
         @endsession
         <form action="/registrando-libro" method="GET">
             @csrf
-            <p class="fs-4 mb-2 text-danger">Formulario: Registrar Libro</p>
-            <div class="input-group mb-4">
+            <p class="fs-4 mb-2 text-danger">{{__('Formulario: Registrar Libro')}}</p>
+            <div class="input-group">
                 <span class="input-group-text" id="basic-addon1">ISBN</span>
-                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="intISBN">
+                <input type="number" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="intISBN">
             </div>
-            <div class="input-group mb-4">
-                <span class="input-group-text" id="basic-addon1">Título</span>
+            <small class="text-danger fst-italic">{{$errors->first('intISBN')}}</small>
+            <div class="input-group mt-4 mt-4">
+                <span class="input-group-text" id="basic-addon1">{{__('Título')}}</span>
                 <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="txtTitulo">
             </div>
-            <div class="input-group mb-4">
-                <span class="input-group-text" id="basic-addon1">Autor</span>
+            <small class="text-danger fst-italic">{{$errors->first('txtTitulo')}}</small>
+            <div class="input-group mt-4">
+                <span class="input-group-text" id="basic-addon1">{{__('Autor')}}</span>
                 <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="txtAutor">
             </div>
-            <div class="input-group mb-4">
-                <span class="input-group-text" id="basic-addon1">Páginas</span>
-                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="intPaginas">
+            <small class="text-danger fst-italic">{{$errors->first('txtAutor')}}</small>
+            <div class="input-group mt-4">
+                <span class="input-group-text" id="basic-addon1">{{__('Páginas')}}</span>
+                <input type="number" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="intPaginas">
             </div>
-            <div class="input-group mb-4">
-                <span class="input-group-text" id="basic-addon1">Año</span>
-                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="intAnio">
+            <small class="text-danger fst-italic">{{$errors->first('intPaginas')}}</small>
+            <div class="input-group mt-4">
+                <span class="input-group-text" id="basic-addon1">{{__('Año')}}</span>
+                <input type="number" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="intAnio">
             </div>
-            <div class="input-group mb-4">
-                <span class="input-group-text" id="basic-addon1">Editorial</span>
+            <small class="text-danger fst-italic">{{$errors->first('intAnio')}}</small>
+            <div class="input-group mt-4">
+                <span class="input-group-text" id="basic-addon1">{{__('Editorial')}}</span>
                 <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="txtEditorial">
             </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Email de Editorial</span>
-                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="txtCorreo">
+            <small class="text-danger fst-italic">{{$errors->first('txtEditorial')}}</small>
+            <div class="input-group mt-4">
+                <span class="input-group-text" id="basic-addon1">{{__('Email de Editorial')}}</span>
+                <input type="email" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" name="txtCorreo">
+            </div>
+            <div class="mb-4">
+                <small class="text-danger fst-italic">{{$errors->first('txtCorreo')}}</small>
             </div>
             <button type="submit" class="btn btn-success">
-                Registrar   
+                {{__('Registrar')}}
             </button>
         </form>
     </div>

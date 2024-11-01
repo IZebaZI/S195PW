@@ -20,8 +20,8 @@
         </a>
     
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="{{route('main')}}" class="btn me-2 {{request()->routeIs('main')?'btn-danger':'btn-outline-danger'}}" aria-current="page">Vista Principal</a></li>
-            <li class="nav-item"><a href="{{route('form')}}" class="btn me-2 {{request()->routeIs('form')?'btn-danger':'btn-outline-danger'}}">Registrar Libro</a></li>
+            <li class="nav-item"><a href="{{route('main')}}" class="btn me-2 {{request()->routeIs('main')?'btn-danger':'btn-outline-danger'}}" aria-current="page">{{__('Vista Principal')}}</a></li>
+            <li class="nav-item"><a href="{{route('form')}}" class="btn me-2 {{request()->routeIs('form')?'btn-danger':'btn-outline-danger'}}">{{__('Registrar Libro')}}</a></li>
         </ul>
         </header>
     </div>
