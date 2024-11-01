@@ -22,11 +22,11 @@ class validateBook extends FormRequest
     public function rules(): array
     {
         return [
-            'intISBN'=>'required|integer|min:13',
+            'intISBN'=>'required|integer|min_digits:13',
             'txtTitulo'=>'required|string|max:150',
             'txtAutor'=>'required|string|max:150',
             'intPaginas'=>'required|integer|min:0',
-            'intAnio'=>'required|integer|min:1000|max:2024',
+            'intAnio'=>'required|integer|max_digits:4|min:1000|max:2024',
             'txtEditorial'=>'required|string|max:150',
             'txtCorreo'=>'required|email:rfc,dns'
         ];
