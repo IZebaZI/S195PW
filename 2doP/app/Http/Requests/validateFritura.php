@@ -22,7 +22,9 @@ class validateFritura extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'txtNombre'=>'required|string',
+            'txtSabor'=>'required|string',
+            'txtPeso'=>'required|numeric'
         ];
     }
 }
