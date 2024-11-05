@@ -9,4 +9,4 @@ use App\Http\Controllers\ControladorFrituras;
 // });
 
 Route::get('/', [ControladorFrituras::class, 'formulario'])->name('form');
-Route::post('/registrar', [ControladorFrituras::class, 'registrar'])->name('registrar');s
+Route::post('/registrar', [ControladorFrituras::class, 'registrar'])->name('registrar');

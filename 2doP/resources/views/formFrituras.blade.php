@@ -13,7 +13,7 @@
     
     <div class="container col-md-5">
         
-        <form action="/registrar" method="GET">
+        <form action="/registrar" method="POST">
             @session('success')
                 <div class="alert alert-success">{{$value}}</div>   
             @endsession
