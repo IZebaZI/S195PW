@@ -28,7 +28,7 @@
         </div>
         
         <div class="card-body">
-            <form action="/enviar" method="POST">
+            <form action="{{route('processClient')}}" method="POST">
                 @csrf
                 <div class="mb-3">
                     <label for="nombre" class="form-label">{{__('Nombre')}}:</label>

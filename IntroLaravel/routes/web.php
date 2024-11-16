@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\clientController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\viewController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -17,12 +17,13 @@ use App\Http\Controllers\viewController;
 
 // Route::view('/componentes', 'components')->name('components');
 
-Route::get('/', [viewController::class, 'home'])->name('welcome');
+// Route::get('/formulario', [viewController::class, 'form'])->name('form');
 
-Route::get('/formulario', [viewController::class, 'form'])->name('form');
 
-Route::get('/consulta-clientes', [viewController::class, 'consulta'])->name('clients');
+// CLIENT CONTROLLER ROUTES
+Route::get('/', [clientController::class, 'home'])->name('welcome');
+Route::get('/componentes', [clientController::class, 'components'])->name('components');
+Route::get('/clientes/create', [clientController::class, 'create'])->name('form');
+Route::post('/clientes/store', [clientController::class, 'store'])->name('processClient');
+Route::get('/clientes/index', [clientController::class, 'index'])->name('clients');
 
-Route::get('/componentes', [viewController::class, 'components'])->name('components');
-
-Route::post('/enviar', [viewController::class, 'processClient'])->name('processClient');

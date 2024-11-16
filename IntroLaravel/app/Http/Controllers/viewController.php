@@ -7,21 +7,6 @@ use App\Http\Requests\validateClient;
 
 class viewController extends Controller
 {
-    public function home(){
-        return view('welcome');
-    }
-
-    public function form(){
-        return view('form');
-    }
-
-    public function consulta(){
-        return view('clients');
-    }
-
-    public function components(){
-        return view('components');
-    }
 
     public function processClient(validateClient $request){
 
