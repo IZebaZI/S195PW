@@ -48,7 +48,7 @@ class clientController extends Controller
 
         $usuario = $request->input('txtnombre');
         session()->flash('exito', 'Se guardó el usuario: '.$usuario);
-        return to_route('form');
+        return to_route('clients');
     }
 
     /**
@@ -68,14 +68,27 @@ class clientController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id){
-        //
+    public function update(validateClient $request, string $id){
+        DB::table('clientes')->where('id', $id)->update([
+            'nombre' => $request->input('txtnombre'.$id),
+            'apellido' => $request->input('txtapellido'.$id),
+            'correo' => $request->input('txtcorreo'.$id),
+            'telefono' => $request->input('txttelefono'.$id),
+            'updated_at' => Carbon::now()
+        ]);
+
+        $usuario = $request->input('txtnombre'.$id);
+        session()->flash('exito', 'Se guardaron los cambios del usuario: '.$usuario);
+        return to_route('clients');
     }
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id){
-        //
+        DB::table('clientes')->where('id', $id)->delete();
+
+        session()->flash('exito', 'Se eliminó correctamente el usuario.');
+        return to_route('clients');
     }
 }

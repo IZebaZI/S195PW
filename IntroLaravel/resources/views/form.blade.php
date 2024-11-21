@@ -4,13 +4,13 @@
 @section('content')
 <!-- Formulario -->
 <div class="container col-5 mt-5">
-    @if (session('exito'))
+    {{-- @if (session('exito'))
         <x-alert type="success">{{session('exito')}}</x-alert>
     @endif
 
     @session ('exito')
         <x-alert type="success">{{$value}}</x-alert>
-    @endsession
+    @endsession --}}
     
     @session ('exito')
         <script>

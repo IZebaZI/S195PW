@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [clientController::class, 'home'])->name('welcome');
 Route::get('/componentes', [clientController::class, 'components'])->name('components');
 Route::get('/clientes/create', [clientController::class, 'create'])->name('form');
-Route::post('/clientes/store', [clientController::class, 'store'])->name('processClient');
 Route::get('/clientes/index', [clientController::class, 'index'])->name('clients');
-
+Route::post('/clientes/store', [clientController::class, 'store'])->name('processClient');
+Route::post('/clientes/update/{id}', [clientController::class, 'update'])->name('editClient');
+Route::post('/clientes/delete/{id}', [clientController::class, 'destroy'])->name('deleteClient');

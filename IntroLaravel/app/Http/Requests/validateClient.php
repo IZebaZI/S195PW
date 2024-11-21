@@ -21,11 +21,21 @@ class validateClient extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'txtnombre'=>'required|min:3|max:20',
-            'txtapellido'=>'required',
-            'txtcorreo'=>'required|email:rfc,dns',
-            'txttelefono'=>'required|numeric'
-        ];
+        if ($this->route('id') == null){
+            return [
+                'txtnombre'=>'required|min:3|max:20',
+                'txtapellido'=>'required',
+                'txtcorreo'=>'required|email:rfc,dns',
+                'txttelefono'=>'required|numeric'
+            ];
+        } else{
+            $id = $this->route('id');
+            return [
+                'txtnombre'.$id=>'required|min:3|max:20',
+                'txtapellido'.$id=>'required',
+                'txtcorreo'.$id=>'required|email:rfc,dns',
+                'txttelefono'.$id=>'required|numeric'
+            ];
+        }
     }
 }
