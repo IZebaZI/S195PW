@@ -15,7 +15,7 @@
             <p class="fs-5">{{__('Presiona el botón para iniciar...')}}</p>
         </div>
         <div class="d-flex justify-content-center">
-            <a href="{{route('form')}}"><button type="submit" class="btn btn-info">{{__('¿Comenzamos?')}}</button></a>
+            <a href="{{route('clients.create')}}"><button type="submit" class="btn btn-info">{{__('¿Comenzamos?')}}</button></a>
         </div>
     </div>
 </body>

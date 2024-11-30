@@ -17,9 +17,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-link {{request()->routeIs('form')?'text-warning':''}}" aria-current="page" href="{{route('form')}}">{{__('Registro de Clientes')}}</a>
-            <a class="nav-link {{request()->routeIs('clients')?'text-success':''}}" href="{{route('clients')}}">{{__('Consultar Clientes')}}</a>
-            <a class="nav-link {{request()->routeIs('components')?'text-primary':''}}" href="{{route('components')}}">{{__('Componentes')}}</a>
+            <a class="nav-link {{request()->routeIs('clients.create')?'text-warning':''}}" aria-current="page" href="{{route('clients.create')}}">{{__('Registro de Clientes')}}</a>
+            <a class="nav-link {{request()->routeIs('clients')?'text-success':''}}" href="{{route('clients.index')}}">{{__('Consultar Clientes')}}</a>
+            {{-- <a class="nav-link {{request()->routeIs('components')?'text-primary':''}}" href="{{route('components')}}">{{__('Componentes')}}</a> --}}
         </div>
         </div>
     </div>

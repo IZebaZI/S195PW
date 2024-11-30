@@ -12,7 +12,7 @@
         <x-alert type="success">{{$value}}</x-alert>
     @endsession --}}
     
-    @session ('exito')
+    @session ('message')
         <script>
             Swal.fire({
                 title: "Respuesta del servidor",
@@ -28,7 +28,7 @@
         </div>
         
         <div class="card-body">
-            <form action="{{route('form')}}" method="POST">
+            <form action="{{route('clients.store')}}" method="POST">
                 @csrf
                 <div class="mb-3">
                     <label for="nombre" class="form-label">{{__('Nombre')}}:</label>
